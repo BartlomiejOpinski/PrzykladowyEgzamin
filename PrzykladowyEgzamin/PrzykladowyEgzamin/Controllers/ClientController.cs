@@ -27,5 +27,11 @@ public class ClientController : ControllerBase
         return Ok(result);
     }
     
+    [HttpPost("{idClient}/reservations/create")]
+    public async Task<IActionResult> AddReservation(Client idClient, [FromBody] DateTime dateFrom, [FromBody] DateTime dateTo, [FromBody] int idBoatStandard, [FromBody] int numOfBoats)
+    {
+        throw new NotImplementedException();
+    }
+    
     
 }

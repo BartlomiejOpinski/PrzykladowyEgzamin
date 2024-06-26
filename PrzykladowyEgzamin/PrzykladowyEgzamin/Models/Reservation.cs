@@ -15,7 +15,7 @@ public class Reservation
     
     public int Capacity { get; set; }
     public int NumOfBoats { get; set; }
-    public bool Fulfilled { get; set; }
+    public bool? Fulfilled { get; set; }
     public decimal? Price { get; set; }
     [MaxLength(100)]
     public string? CancelReason { get; set; }
