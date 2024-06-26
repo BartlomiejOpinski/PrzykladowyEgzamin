@@ -10,6 +10,9 @@ public class Reservation
     [Key]
     public int IdReservation { get; set; }
     
+    public DateOnly DateTo { get; set; }
+    public DateOnly DateFrom { get; set; }
+    
     public int Capacity { get; set; }
     public int NumOfBoats { get; set; }
     public bool Fulfilled { get; set; }

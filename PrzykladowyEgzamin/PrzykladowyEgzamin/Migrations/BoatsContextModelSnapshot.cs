@@ -135,6 +135,12 @@ namespace PrzykladowyEgzamin.Migrations
                     b.Property<int>("Capacity")
                         .HasColumnType("int");
 
+                    b.Property<DateOnly>("DateFrom")
+                        .HasColumnType("date");
+
+                    b.Property<DateOnly>("DateTo")
+                        .HasColumnType("date");
+
                     b.Property<bool>("Fulfilled")
                         .HasColumnType("bit");
 

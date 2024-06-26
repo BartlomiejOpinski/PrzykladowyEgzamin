@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using PrzykladowyEgzamin.Context;
 using PrzykladowyEgzamin.Models;
+using PrzykladowyEgzamin.Services;
 
 namespace PrzykladowyEgzamin.Controllers;
 
@@ -9,16 +10,22 @@ namespace PrzykladowyEgzamin.Controllers;
 public class ClientController : ControllerBase
 {
 
-    private readonly BoatsContext _boatsContext;
+    private readonly ClientService _clientService;
 
-    public ClientController(BoatsContext boatsContext)
+    public ClientController(ClientService clientService)
     {
-        _boatsContext = boatsContext;
+        _clientService = clientService;
     }
     
-    /*[HttpGet("{idClient}")]
-    public async Task<IActionResult> GetClientReservations(Client idClient)
+    [HttpGet("{idClient}/reservations")]
+    public async Task<IActionResult> GetReservationByClientId(Client idClient)
     {
-        var result = _
-    }*/
+        var result = _clientService.GetReservationByClientId(idClient.IdClient);
+
+        result = result.OrderByDescending(r => r.DateTo).ToList();
+        
+        return Ok(result);
+    }
+    
+    
 }
