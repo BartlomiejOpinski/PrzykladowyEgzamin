@@ -6,7 +6,7 @@ public interface IClientService
 {
     public IEnumerable<Reservation> GetReservationByClientId(int clientId);
 
-    public int AddReservation(int clientId, DateTime dateFrom, DateTime dateTo, int idBoatStandard, int numOfBoats);
+    public int AddReservation(int clientId, DateOnly dateFrom, DateOnly dateTo, int idBoatStandard, int numOfBoats);
     
     
 
